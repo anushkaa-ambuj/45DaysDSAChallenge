@@ -1,2 +1,3 @@
 # 45DaysDSAChallenge
-Total Questions: 280+
+📚 Number of questions: 280+
+🚀 Start: July 20, 2024
