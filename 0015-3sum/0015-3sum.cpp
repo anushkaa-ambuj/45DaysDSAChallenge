@@ -1,21 +1,28 @@
 class Solution {
 public:
-    std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
-        std::vector<std::vector<int>> ans;
-        std::sort(nums.begin(), nums.end()); // Sort the array to handle duplicates
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> ans;
+        
+        sort(nums.begin(), nums.end()); // Sort the array to handle duplicates
 
         for (int i = 0; i < nums.size(); ++i) {
             if (i > 0 && nums[i] == nums[i - 1]) continue; // Skip duplicates for i
             
-            std::unordered_set<int> seen;
-            for (int j = i + 1; j < nums.size(); ++j) {
-                int complement = -nums[i] - nums[j];
-                if (seen.find(complement) != seen.end()) {
-                    ans.push_back({nums[i], nums[j], complement});
-                    // Skip duplicates for the second number
-                    while (j + 1 < nums.size() && nums[j] == nums[j + 1]) ++j;
+            int p1 = i + 1, p2 = nums.size() - 1;
+            int complement = -nums[i];
+            while (p1 < p2) {
+                if (nums[p1] + nums[p2] == complement) {
+                    ans.push_back({nums[i], nums[p1], nums[p2]});
+                    // Move both pointers to the next different number to avoid duplicates
+                    while (p1 < p2 && nums[p1] == nums[p1 + 1]) p1++;
+                    while (p1 < p2 && nums[p2] == nums[p2 - 1]) p2--;
+                    p1++;
+                    p2--;
+                } else if (nums[p1] + nums[p2] < complement) {
+                    p1++;
+                } else {
+                    p2--;
                 }
-                seen.insert(nums[j]);
             }
         }
         return ans;
