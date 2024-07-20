@@ -18,19 +18,19 @@
  <h4> Time Complexity: O(N^2) </h4>
  Sorting --> NlogN <br>
  loops --> N^2
- <h4> Space Complexity: O(N) {due to sorting} </h4>
+ <h4> Space Complexity: O(1)  But: O(N)/O(logN) {due to sorting} </h4>
 
  <hr>
 
- <h3> Approach 2: Using HashMap</h3>
+ <h3> Approach 2: Using Sets</h3>
  1. Sort the array
- Iterate over the arr, check if target-arr[i] already exist in unordered map/set, then return. <br>
+ Iterate over the arr, check if target-arr[i]-arr[j] already exist in unordered map/set, then return. <br>
  2. Else insert add that element in the map/set 
 
- <h4> Time Complexity: O(N) </h4>
+ <h4> Time Complexity: O(N^2) </h4>
  <h4> Space Complexity: O(N) </h4>
 
  <hr><hr>
 
  <h2> Comparing Approaches: </h2>
-Hash Maps > Sorting+Two Pointers
+ Sorting+Three Pointers > Sets
