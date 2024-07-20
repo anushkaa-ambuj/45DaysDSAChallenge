@@ -1,5 +1,12 @@
 ​​<h2> Approaches: </h2>
 
+<h3> BruteForce: </h3>
+
+ <h4> Time Complexity: O(N^2) </h4>
+ <h4> Space Complexity: O(1) </h4>
+
+ <hr>
+
 <h3> Approach 1: Sorting + Two Pointers</h3>
  1. Simply sort the array using merge sort or quick sort or inbuilt func. <br>
  2. Set p1=0 and p2=N-1(last index). <br>
