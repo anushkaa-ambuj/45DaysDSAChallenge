@@ -3,7 +3,7 @@
 <h3> Approach 1: Sorting</h3>
  1. Simply sort the array using merge sort or quick sort <br>
  2. Then iterate the array, comparing i and (i+1)th index --> if same return arr[i].
- <h4> Time Complexity: O(NlogN+N) = O(NlogN) </h4>
+ <h4> Time Complexity: O(NlogN) </h4>
  <h4> Space Complexity: O(N) </h4>
 
  <hr>
